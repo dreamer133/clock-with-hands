@@ -80,7 +80,7 @@ export default function Clock() {
                 <Digit9>9</Digit9>
 
                 <Hand style={{ transform: 'rotate(' + hourAngle + 'deg)' }}>
-                    <HalfHand style={{ width: '6px', background: 'purple',  }} />
+                    <HalfHand style={{ width: '10px', background: 'purple',  }} />
                     {/* , borderTop: 'magenta 30px solid', borderRadius: '3px' */}
                 </Hand>
                 <Hand style={{ transform: 'rotate(' + minuteAngle + 'deg)' }}>
