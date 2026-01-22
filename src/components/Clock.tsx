@@ -1,59 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import styled from 'styled-components';
-
-
-const ContainerDiv = styled.div`
-    display: block; 
-    position: relative; 
-    width: 800px; 
-    height: 400px; 
-    border: #c2c2c2 2px solid;
-    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c); 
-    border-radius: 150px;        
-`;
-
-const Digit = styled.div`
-    display: 'block'; 
-    position: absolute;     
-    font-weight: bold; 
-    font-size:28px; 
-    color: #010c03;    
-`;
-
-const Digit12 = styled(Digit)`
-    top: 0; 
-    left: 400px; 
-`;
-
-const Digit3 = styled(Digit)`
-    top: 180px; 
-    right: 0px; 
-`;
-
-const Digit6 = styled(Digit)`
-    bottom: 0; 
-    left: 400px; 
-`;
-
-const Digit9 = styled(Digit)`
-    top: 180px; 
-    left: 0px; 
-`;
-
-const Hand = styled.div`
-    position: absolute; 
-    top: 0px; 
-    left: 400px;     
-    height: 400px;    
-`;
-
-const HalfHand = styled.div`
-    display: block;
-    width: 100%; 
-    height: 50%; 
-    background: red;
-`;
+import './Clock.css';
 
 export default function Clock() {
     const [date, setDate] = useState(new Date());
@@ -73,23 +20,22 @@ export default function Clock() {
     return (
         <div>
             <h1>{date.toLocaleTimeString()}</h1>
-            <ContainerDiv>
-                <Digit12>12</Digit12>
-                <Digit3>3</Digit3>
-                <Digit6>6</Digit6>
-                <Digit9>9</Digit9>
+            <div className="container">
+                <div className="digit digit-12">12</div>
+                <div className="digit digit-3">3</div>
+                <div className="digit digit-6">6</div>
+                <div className="digit digit-9">9</div>
 
-                <Hand style={{ transform: 'rotate(' + hourAngle + 'deg)' }}>
-                    <HalfHand style={{ width: '10px', background: 'purple',  }} />
-                    {/* , borderTop: 'magenta 30px solid', borderRadius: '3px' */}
-                </Hand>
-                <Hand style={{ transform: 'rotate(' + minuteAngle + 'deg)' }}>
-                    <HalfHand style={{ width: '3px', background: 'green' }} />
-                </Hand>
-                <Hand style={{ transform: 'rotate(' + secondAngle + 'deg)' }}>
-                    <HalfHand style={{ width: '1px', background: 'red' }} />
-                </Hand>
-            </ContainerDiv>
+                <div className="hand" style={{ transform: 'rotate(' + hourAngle + 'deg)' }}>
+                    <div className="half-hand hour-hand" />
+                </div>
+                <div className="hand" style={{ transform: 'rotate(' + minuteAngle + 'deg)' }}>
+                    <div className="half-hand minute-hand" />
+                </div>
+                <div className="hand" style={{ transform: 'rotate(' + secondAngle + 'deg)' }}>
+                    <div className="half-hand second-hand" />
+                </div>
+            </div>
         </div>
     );
 };

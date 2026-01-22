@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Clock with Hands
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An analog clock built with React and TypeScript that displays the current time with rotating hour, minute, and second hands.
+
+## Features
+
+- Real-time analog clock display
+- Animated rotating hands (hour, minute, second)
+- Digital time display
+- Gradient background with smooth styling
 
 ## Available Scripts
 
